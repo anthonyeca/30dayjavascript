@@ -433,82 +433,6 @@
 // console.log(averageRating("TV"))
 
 //4.
-//INCOMEPLETE
-// const users = [
-//     {
-//         _id: 'ab12ex',
-//         username: 'Alex',
-//         email: 'alex@alex.com',
-//         password: '123123',
-//         createdAt: '08/01/2020 9:00 AM',
-//         isLoggedIn: false
-//     },
-//     {
-//         _id: 'fg12cy',
-//         username: 'Asab',
-//         email: 'asab@asab.com',
-//         password: '123456',
-//         createdAt: '08/01/2020 9:30 AM',
-//         isLoggedIn: true
-//     },
-//     {
-//         _id: 'zwf8md',
-//         username: 'Brook',
-//         email: 'brook@brook.com',
-//         password: '123111',
-//         createdAt: '08/01/2020 9:45 AM',
-//         isLoggedIn: true
-//     },
-//     {
-//         _id: 'eefamr',
-//         username: 'Martha',
-//         email: 'martha@martha.com',
-//         password: '123222',
-//         createdAt: '08/01/2020 9:50 AM',
-//         isLoggedIn: false
-//     },
-//     {
-//         _id: 'ghderc',
-//         username: 'Thomas',
-//         email: 'thomas@thomas.com',
-//         password: '123333',
-//         createdAt: '08/01/2020 10:00 AM',
-//         isLoggedIn: false
-//     }
-// ];
-
-// const products = [
-//     {
-//         _id: 'eedfcf',
-//         name: 'mobile phone',
-//         description: 'Huawei Honor',
-//         price: 200,
-//         ratings: [
-//             { userId: 'fg12cy', rate: 5 },
-//             { userId: 'zwf8md', rate: 4.5 }
-//         ],
-//         likes: []
-//     },
-//     {
-//         _id: 'aegfal',
-//         name: 'Laptop',
-//         description: 'MacPro: System Darwin',
-//         price: 2500,
-//         ratings: [],
-//         likes: ['fg12cy', "zwf8md"]
-//     },
-//     {
-//         _id: 'hedfcg',
-//         name: 'TV',
-//         description: 'Smart TV:Procaster',
-//         price: 400,
-//         ratings: [{ userId: 'fg12cy', rate: 5 }],
-//         likes: ['fg12cy']
-//     }
-// ]
-
-
-// // A
 // const signUp = (user, email, password) => {
 //     let keys = "abcdefghijklmnopqrstuvwxyz01234567890"
 //     let id = []
@@ -557,32 +481,28 @@
 //         if (product == products[i]["name"]) {
 //             if (products[i].likes.length == 0) {
 //                 products[i].likes.push(id)
-//                 return `Liked Completed by ${id}, Number of likes: ${products[i].likes.length}, likes: ${products[i]}`
+//                 return `Liked Completed by ${id}, Number of likes: ${products[i].likes.length}, likes: ${products[i].likes}`
+
 //             } else {
 //                 for (let j = 0; j < products[i].likes.length; j++) {
 //                     if (products[i].likes[j] == id) {
-//                         let array = products[i].likes
-//                         let index = array.indexOf(id)
-//                         if (index > -1) {
-//                             array.splice(index, 1);
-//                             return `Se ha removido el like, actualmente hay ${array.length} likes ${array}`
-//                         } else {
-//                             products[i].likes.push(id)
-//                         }
-
+//                         let arr = products[i].likes
+//                         arr.splice(id, 1)
+//                         products[i].likes = arr
+//                         return `Like from ${id} removed,likes: ${arr.length} from ${products[i].likes}`
 //                     }
 //                 }
+//                 products[i].likes.push(id)
+//                 return `Liked Completed by ${id} likes: ${products[i].likes.length} likes from: ${products[i].likes}`
 //             }
 //         }
 //     }
-
-//     return `Liked Completed by ${id}`
 // }
-
-// likeProduct("Franco", "Laptop")
-// // console.log(products)
-// // console.log(products[0].likes.push(users[6].username))
-// // console.log(products[0].likes)
+// console.log(products[1].likes)
 
 // likeProduct("Mariale", "Laptop")
-// console.log(products[1].likes)
+// console.log(products)
+// likeProduct("Mariale", "TV")
+// console.log(products)
+// likeProduct("Mariale", "TV")
+// console.log(products)
