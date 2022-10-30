@@ -297,4 +297,18 @@ const products = [
 //});
 
 //2.
-//DIFFICULT LVL TO HIGH XD FOR THE RESTW OF EXERCISES
+const mostSpokenLanguages = (arr, numberOfCountries) => {
+  const occurences = arr.reduce((acc, curr) => {
+    const { languages } = curr;
+    languages.forEach((language) => {
+      acc[language] = acc[language] === undefined ? 1 : acc[language] + 1;
+    });
+
+    return acc;
+  }, {});
+  return Object.keys(occurences)
+    .map((language) => ({ language, count: occurences[language] }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, numberOfCountries);
+};
+console.log(mostSpokenLanguages(countries_data, 5));
