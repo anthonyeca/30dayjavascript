@@ -1,5 +1,6 @@
-//import { countries_data } from "./countries_data.js";
-
+// import { countries_data } from "./countries_data.js"
+// import { countries } from "./countries.js"
+// import { countries_random } from "./countries_error.js"
 const countries_data = [
   {
     name: "Afghanistan",
@@ -22,7 +23,7 @@ const countries_data = [
   {
     name: "Albania",
     capital: "Tirana",
-    languages: ["Albanian"],
+    languages: ["Turkmen"],
     population: 2837743,
     flag: "https://flagcdn.com/al.svg",
     region: "Europe",
@@ -2257,12 +2258,9 @@ const countries_data = [
     region: "Africa",
     area: 390757,
   },
-];
-//import { countries } from "./countries.js";
-//import { countries_random } from "./countries_error.js";
-
-const names = ["Asabeneh", "Mathias", "Elias", "Brook"];
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+]
+const names = ["Asabeneh", "Mathias", "Elias", "Brook"]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const products = [
   { product: "banana", price: 3 },
   { product: "mango", price: 6 },
@@ -2270,7 +2268,7 @@ const products = [
   { product: "avocado", price: 8 },
   { product: "coffee", price: 10 },
   { product: "tea", price: "" },
-];
+]
 
 //1. Explain the difference between forEach, map, filter, and reduce.
 //2.Define a callback function before you use it in forEach, map, filter or reduce.
@@ -2557,29 +2555,21 @@ const products = [
 //});
 
 //2.
-// const mostSpokenLanguages = (arr, numberOfCountries) => {
-//   const occurences = arr.reduce((acc, curr) => {
-//     const { languages } = curr;
-//     languages.forEach((language) => {
-//       acc[language] = acc[language] === undefined ? 1 : acc[language] + 1;
-//     });
+const mostSpokenLanguages = (arr, numberOfCountries) => {
+  const occurences = arr.reduce((acc, curr) => {
+    const { languages } = curr
+    languages.forEach((language) => {
+      acc[language] = acc[language] === undefined ? 1 : acc[language] + 1
+    })
 
-//     return acc;
-//   }, {});
-//   return Object.keys(occurences)
-//     .map((language) => ({ language, count: occurences[language] }))
-//     .sort((a, b) => b.count - a.count)
-//     .slice(0, numberOfCountries);
-// };
-// console.log(mostSpokenLanguages(countries_data, 5));
+    return acc
+  }, {})
+  return Object.keys(occurences)
+    .map((language) => ({ language, count: occurences[language] }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, numberOfCountries)
+}
+console.log(mostSpokenLanguages(countries_data, 5))
 
 //3.
-// const mostPopulatedCountries = (arr, numberOfCountries) => {
-//   let newArr = {};
-//   const occurences = arr.reduce((acc, curr) => {
-//     const { population, name } = curr;
-//     newArr = `${name}: ${population}`;
-//   }, {});
-//   return newArr;
-// };
-// console.log(mostPopulatedCountries(countries_data, 5));
+//INCOMPLETE, I dont have any idea to implement it with map or set
