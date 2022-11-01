@@ -28,10 +28,6 @@ import { countries_data } from "./countries_data.js"
 // console.log(setOfNumbers)
 
 //4.
-// const setOfNumbers = new Set()
-// for (let i = 0; i <= 10; i++) {
-//   setOfNumbers.add(i)
-// }
 // setOfNumbers.clear()
 // console.log(setOfNumbers)
 
@@ -72,11 +68,11 @@ const countries = ["Finland", "Sweden", "Norway"]
 //2. *** Use the countries data to find the 10 most spoken languages:
 
 //1.
-let arr = []
-countries_data.forEach((el) => {
-  el.languages.map((el) => arr.push(el))
-})
-let uniqueLanguages = new Set(arr)
-console.log(uniqueLanguages.size)
+// let arr = []
+// countries_data.forEach((el) => {
+//   el.languages.map((el) => arr.push(el))
+// })
+// let uniqueLanguages = new Set(arr)
+// console.log(uniqueLanguages.size)
 
 //2.
