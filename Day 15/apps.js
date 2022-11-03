@@ -146,45 +146,45 @@
 // console.log("Standard Deviation: ", statistics.std())
 
 //2.
-class PersonAccount {
-  constructor(firstname, lastname, incomes, expenses, balance = 0) {
-    this.firstname = firstname
-    this.lastname = lastname
-    this.incomes = incomes
-    this.expeses = expenses
-    this.balance = balance
-  }
-  accountInfo() {
-    return `Your name is ${this.firstname} ${this.lastname} you have ${this.incomes} and ${this.expenses}`
-  }
+// class PersonAccount {
+//   constructor(firstname, lastname, incomes, expenses, balance = 0) {
+//     this.firstname = firstname
+//     this.lastname = lastname
+//     this.incomes = incomes
+//     this.expeses = expenses
+//     this.balance = balance
+//   }
+//   accountInfo() {
+//     return `Your name is ${this.firstname} ${this.lastname} you have ${this.incomes} and ${this.expenses}`
+//   }
 
-  addIncome(income) {
-    this.balance += income
-    return `You added ${income}$ to your balance`
-  }
-  addExpenses(expenses) {
-    this.balance -= expenses
-    return `You added ${expenses}$ as expenses`
-  }
+//   addIncome(income) {
+//     this.balance += income
+//     return `You added ${income}$ to your balance`
+//   }
+//   addExpenses(expenses) {
+//     this.balance -= expenses
+//     return `You added ${expenses}$ as expenses`
+//   }
 
-  accountBalance() {
-    return `Your current balance is: ${this.balance}$`
-  }
+//   accountBalance() {
+//     return `Your current balance is: ${this.balance}$`
+//   }
 
-  totalIncome() {
-    let arr = []
-    console.log(this.incomes)
-    arr.push(this.incomes)
-    return arr
-  }
-}
+//   totalIncome() {
+//     let arr = []
+//     console.log(this.incomes)
+//     arr.push(this.incomes)
+//     return arr
+//   }
+// }
 
-const persona = new PersonAccount("XXX", "XXXX", "2000", "100")
+// const persona = new PersonAccount("XXX", "XXXX", "2000", "100")
 
-console.log(persona.accountInfo())
-console.log(persona.addIncome(200))
-console.log(persona.addIncome(300))
-console.log(persona.accountBalance())
-console.log(persona.addExpenses(100))
-console.log(persona.accountBalance())
-console.log(persona.totalIncome())
+// console.log(persona.accountInfo())
+// console.log(persona.addIncome(200))
+// console.log(persona.addIncome(300))
+// console.log(persona.accountBalance())
+// console.log(persona.addExpenses(100))
+// console.log(persona.accountBalance())
+// console.log(persona.totalIncome())
