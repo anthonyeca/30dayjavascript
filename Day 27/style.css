@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main{
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1{
+    margin-top: 2rem;
+    font-size: 43px;
+    color: #36454f;
+}
+
+#content{
+    color: #36454f;
+    font-size: 15px;
+}
+
+span{
+    font-weight: bold;
+    color: black;
+}
+
+#titles > h4{
+    position: relative;
+    animation-name: movement;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+@keyframes movement {
+    0%   {opacity: 5%;left:0px}
+    33%  {opacity: 50%;left:25px}
+    66%  {opacity: 75%;left:50px}
+    100%  {opacity: 100%;left:75px}
+}
