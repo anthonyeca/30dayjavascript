@@ -1,0 +1,51 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    color: orange;
+    font-weight: 200;
+}
+
+#header{
+    background-color: seashell;
+    margin-top: -20px;
+}
+
+input{
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.button{
+    background-color: orange; 
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 15px;
+    padding: 0.7rem;
+    border: none;
+    width: 8%;
+}
+
+img{
+    width: 6rem;    
+    height: 4rem;
+    margin-top: 10px;
+}
+.countryInfo{
+    color: grey;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#title{
+    color: orange;
+    display: flex;
+    justify-content: center;
+}
