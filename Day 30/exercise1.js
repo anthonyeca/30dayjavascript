@@ -8,7 +8,7 @@ const country = document.createElement('div')
 const searchBar = document.getElementById('searchBar')
 const buttonName = document.getElementById('name')
 const buttonCapital = document.getElementById('capital')
-const buttonpoPopulation = document.getElementById('population')
+const buttonPopulation = document.getElementById('population')
 
 totalCountries.textContent = `Currently, we have ${countries_data.length} countries`
 
@@ -50,89 +50,148 @@ const getCountries = (params) => {
   let arr = []
   countries_data.forEach((el) => {
     let countryLowered = el.name.toLowerCase()
-    let countryText = document.createElement('p')
+    // let countryText = document.createElement('p')
 
     if (countryLowered.includes(params) === true) {
       arr.push(el)
-
-      let flag = el.flag
-      let nameCountry = el.name
-      let capital = el.capital
-      let languages = el.languages
-      let population = el.population
-      countryText.innerHTML = `<img src='${flag}'></img><br><div class='countryInfo'> <span id ='title'>${nameCountry}</span><br><span>Capital: ${capital}</span><br><span >Languages: ${languages}</span><br><span> Population: ${population}</span></div>`
-      country.append(countryText)
-      countriesContainer.append(country)
-      countryText.style.width = '12rem'
-      countryText.style.height = '13em'
-      countryText.style.background = 'beige'
-      countryText.style.marginLeft = '20px'
+      // let flag = el.flag
+      // let nameCountry = el.name
+      // let capital = el.capital
+      // let languages = el.languages
+      // let population = el.population
+      // countryText.innerHTML = `<img src='${flag}'></img><br><div class='countryInfo'> <span id ='title'>${nameCountry}</span><br><span>Capital: ${capital}</span><br><span >Languages: ${languages}</span><br><span> Population: ${population}</span></div>`
+      // country.append(countryText)
+      // countriesContainer.append(country)
+      // countryText.style.width = '12rem'
+      // countryText.style.height = '13em'
+      // countryText.style.background = 'beige'
+      // countryText.style.marginLeft = '20px'
     }
   })
-  let arrSorted = arr.sort(function (a, b) {
-    return b.name > a.name ? 1 : -1
+  return arr
+}
+
+const sortCountriesByName = (arr) => {
+  if (buttonName.textContent === 'NAME⬇') {
+    let arrSortedDesc = arr.sort(function (a, b) {
+      return b.name > a.name ? 1 : -1
+    })
+    return arrSortedDesc
+  } else if (buttonName.textContent === 'NAME⬆') {
+    let arrSortedAsc = arr.sort(function (a, b) {
+      return a.name > b.name ? 1 : -1
+    })
+    return arrSortedAsc
+  } else {
+    return arr
+  }
+}
+
+const sortCountriesByCapital = (arr) => {
+  if (buttonCapital.textContent === 'CAPITAL⬇') {
+    let arrSortedDesc = arr.sort(function (a, b) {
+      return b.capital > a.capital ? 1 : -1
+    })
+    return arrSortedDesc
+  } else if (buttonCapital.textContent === 'CAPITAL⬆') {
+    let arrSortedAsc = arr.sort(function (a, b) {
+      return a.capital > b.capital ? 1 : -1
+    })
+    return arrSortedAsc
+  } else {
+    return arr
+  }
+}
+
+const sortCountriesByPopulation = (arr) => {
+  if (buttonPopulation.textContent === 'POPULATION⬆') {
+    let arrSortedAsc = arr.sort(function (a, b) {
+      return b.population > a.population ? 1 : -1
+    })
+    return arrSortedAsc
+  } else if (buttonPopulation.textContent === 'POPULATION⬇') {
+    let arrSortedDesc = arr.sort(function (a, b) {
+      return a.population > b.population ? 1 : -1
+    })
+    return arrSortedDesc
+  } else {
+    return arr
+  }
+}
+
+const putCountries = (arr) => {
+  arr.forEach((el) => {
+    let countryText = document.createElement('p')
+    let flag = el.flag
+    let nameCountry = el.name
+    let capital = el.capital
+    let languages = el.languages
+    let population = el.population
+    countryText.innerHTML = `<img src='${flag}'></img><br><div class='countryInfo'> <span id ='title'>${nameCountry}</span><br><span>Capital: ${capital}</span><br><span >Languages: ${languages}</span><br><span> Population: ${population}</span></div>`
+    country.append(countryText)
+    countriesContainer.append(country)
+    countryText.style.width = '12rem'
+    countryText.style.height = '13em'
+    countryText.style.background = 'beige'
+    countryText.style.marginLeft = '20px'
   })
-  console.log(arrSorted)
 }
 
 searchBar.addEventListener('input', (e) => {
   let word = e.target.value
-  getCountries(word.toLowerCase())
+  putCountries(getCountries(word.toLowerCase()))
 })
 
 buttonName.addEventListener('click', () => {
   switch (buttonName.textContent) {
     case 'NAME':
       buttonName.textContent = 'NAME⬆'
+      putCountries(sortCountriesByName(getCountries(input.value)))
       break
 
     case 'NAME⬆':
       buttonName.textContent = 'NAME⬇'
+      putCountries(sortCountriesByName(getCountries(input.value)))
       break
     default:
       buttonName.textContent = 'NAME'
+      putCountries(sortCountriesByName(getCountries(input.value)))
       break
   }
-
-  console.log(buttonName.textContent)
 })
 
 buttonCapital.addEventListener('click', () => {
   switch (buttonCapital.textContent) {
     case 'CAPITAL':
       buttonCapital.textContent = 'CAPITAL⬆'
+      putCountries(sortCountriesByCapital(getCountries(input.value)))
       break
 
     case 'CAPITAL⬆':
       buttonCapital.textContent = 'CAPITAL⬇'
+      putCountries(sortCountriesByCapital(getCountries(input.value)))
       break
     default:
       buttonCapital.textContent = 'CAPITAL'
+      putCountries(sortCountriesByCapital(getCountries(input.value)))
       break
   }
-
-  console.log(buttonCapital.textContent)
 })
 
-buttonpoPopulation.addEventListener('click', () => {
-  switch (buttonpoPopulation.textContent) {
+buttonPopulation.addEventListener('click', () => {
+  switch (buttonPopulation.textContent) {
     case 'POPULATION':
-      buttonpoPopulation.textContent = 'POPULATION⬆'
+      buttonPopulation.textContent = 'POPULATION⬆'
+      putCountries(sortCountriesByPopulation(getCountries(input.value)))
       break
 
     case 'POPULATION⬆':
-      buttonpoPopulation.textContent = 'POPULATION⬇'
+      buttonPopulation.textContent = 'POPULATION⬇'
+      putCountries(sortCountriesByPopulation(getCountries(input.value)))
       break
     default:
-      buttonpoPopulation.textContent = 'POPULATION'
+      buttonPopulation.textContent = 'POPULATION'
+      putCountries(sortCountriesByPopulation(getCountries(input.value)))
       break
   }
-
-  console.log(buttonpoPopulation.textContent)
 })
-
-Object.values(
-  countries_data.sort((a, b) => {
-    return b.name - a.name
-  })
-)
