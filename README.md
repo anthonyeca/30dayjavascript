@@ -9,3 +9,7 @@ I will try to do 1 day everyday, but I think that task will be almost impossible
 # UPDATE 22/10/2022
 
 Long time without practicing (almost 3 months), but I'm decided to make it
+
+# UPDATE 20/11/2022 (ALMOST FINISHED but I won't continue)
+
+Thank you so much to Asabeneh for this repo, this "30 Days of Javascript" help me a lot to improve my JS and programming
