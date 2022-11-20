@@ -4,6 +4,7 @@
 
 body{
     text-align: center;
+    background-color: #ddd;
 }
 
 h1{
@@ -29,6 +30,7 @@ input{
     padding: 0.7rem;
     border: none;
     width: 8%;
+    margin-bottom: 2rem;
 }
 
 img{
@@ -48,4 +50,20 @@ img{
     color: orange;
     display: flex;
     justify-content: center;
+}
+
+#langaguesPopulationDiv{
+    background: white;
+    padding-bottom: 5px;
+}
+
+#langaguesPopulationDiv > button{
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: -1rem;
+}
+
+#langaguesPopulationDiv > p{
+    font-size: 14px;
+    
 }

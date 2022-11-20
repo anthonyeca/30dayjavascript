@@ -9,6 +9,8 @@ const searchBar = document.getElementById('searchBar')
 const buttonName = document.getElementById('name')
 const buttonCapital = document.getElementById('capital')
 const buttonPopulation = document.getElementById('population')
+const populationChartDiv = document.getElementById('populationChart')
+const countryChart = document.createElement('div')
 
 totalCountries.textContent = `Currently, we have ${countries_data.length} countries`
 
@@ -47,25 +49,14 @@ countries_data.forEach((el) => {
 
 const getCountries = (params) => {
   country.innerHTML = ''
+  countryChart.innerHTML = ''
   let arr = []
   countries_data.forEach((el) => {
-    let countryLowered = el.name.toLowerCase()
-    // let countryText = document.createElement('p')
+    let nameLowered = el.name.toLowerCase()
+    // let capitalLowered = el.capital.toLowerCase()
 
-    if (countryLowered.includes(params) === true) {
+    if (nameLowered.includes(params) === true) {
       arr.push(el)
-      // let flag = el.flag
-      // let nameCountry = el.name
-      // let capital = el.capital
-      // let languages = el.languages
-      // let population = el.population
-      // countryText.innerHTML = `<img src='${flag}'></img><br><div class='countryInfo'> <span id ='title'>${nameCountry}</span><br><span>Capital: ${capital}</span><br><span >Languages: ${languages}</span><br><span> Population: ${population}</span></div>`
-      // country.append(countryText)
-      // countriesContainer.append(country)
-      // countryText.style.width = '12rem'
-      // countryText.style.height = '13em'
-      // countryText.style.background = 'beige'
-      // countryText.style.marginLeft = '20px'
     }
   })
   return arr
@@ -122,6 +113,9 @@ const sortCountriesByPopulation = (arr) => {
 const putCountries = (arr) => {
   arr.forEach((el) => {
     let countryText = document.createElement('p')
+    let countryChartName = document.createElement('p')
+    let countryChartPopulation = document.createElement('p')
+
     let flag = el.flag
     let nameCountry = el.name
     let capital = el.capital
@@ -134,6 +128,15 @@ const putCountries = (arr) => {
     countryText.style.height = '13em'
     countryText.style.background = 'beige'
     countryText.style.marginLeft = '20px'
+
+    countryChartName.textContent = nameCountry
+    countryChartPopulation.textContent = population
+
+    countryChart.append(countryChartName, countryChartPopulation)
+    populationChartDiv.append(countryChart)
+
+    countryChart.style.display = 'grid'
+    countryChart.style.gridTemplateColumns = '1fr 1fr'
   })
 }
 
